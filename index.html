@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <title>TODO supply a title</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="./css/newcss.css" />
+    </head>
+    <script>
+      function ShowMyDiv(Obj) {
+        var elements = document.getElementsByTagName("div");
+        for (var i = 0; i < elements.length; i++)
+          if (elements[i].className == "tabcontent")
+            elements[i].style.display = "none";
+
+        document.getElementById(Obj.rel).style.display = "block";
+        //------------------------------------
+
+        var ul_el = document.getElementById("tab_ul");
+        var li_el = ul_el.getElementsByTagName("li");
+        for (var i = 0; i < li_el.length; i++) li_el[i].className = "";
+
+        Obj.parentNode.className = "selected";
+      }
+    </script>
+    <body class="tudo">
+      <header class="cabe">
+        Header novo teste teste
+      </header>
+      <nav class="nave">teste</nav>
+      <section class="corp">
+        <main class="g2main">
+          <div class="g2tool">
+            <ul id="tab_ul" class="tabs">
+              <li class="selected">
+                <a rel="tab_div1" href="#" onclick="javascript:ShowMyDiv(this);"
+                  >Tab 1</a
+                >
+              </li>
+              <li class="">
+                <a rel="tab_div2" href="#" onclick="javascript:ShowMyDiv(this);"
+                  >Tab 2</a
+                >
+              </li>
+              <li class="">
+                <a rel="tab_div3" href="#" onclick="javascript:ShowMyDiv(this);"
+                  >Tab 3</a
+                >
+              </li>
+              <li class="">
+                <a rel="tab_div4" href="#" onclick="javascript:ShowMyDiv(this);"
+                  >Tab 4</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="g2bar">g2barbar1</div>
+          <div class="g2linhas"><div class="tabcontents">
+              <div class="tabcontent" id="tab_div1" style="display: block;">
+               <b>Content 1 Title</b>
+               <p>The content could contain anything text page or submit form or any other HTML objects.</p>
+              </div>
+              <div class="tabcontent" id="tab_div2" style="display: none;">
+               <b>Where are the divs</b>
+               <p>All content divs related to the tabs are invisible only the one related to the selected tab is set to be visible.</p>
+              </div>
+              <div class="tabcontent" id="tab_div3" style="display: none;">
+               <b>About tabs</b>
+               <p>by Selecting any tab its classname will set to be "selected" which has a different style from the other tabs<br>
+               that can be done by using a simple javascript code<br>
+               <b><I>TabObj.className="selected";</I></b></p>
+              </div>
+              <div class="tabcontent" id="tab_div4" style="display: none;">            
+               <div style="border:1px solid black;">
+               <p><B>Read more about</B><br>
+               <A HREF="http://function-code.blogspot.com/2012/12/div-inside-another-div.html">how to put div inside another div</A><br>
+               <A HREF="http://function-code.blogspot.com/2012/11/change-div-border-width-style-and-color.html">How to change div border width style and color</A>
+               </p>
+               <div>
+              </div>
+             </div>
+          <div class="g2roda">g2roda Rodape</div>
+          <!-- <div class="g2foot">g2foot</div>-->
+        </main>
+      </section>
+    </body>
+  </html>
+</html>

@@ -1,0 +1,208 @@
+.body {
+  padding: 10px;
+  height: 100%;
+}
+.tudo {
+  display: grid;
+  grid-template-areas:
+    "cabe cabe"
+    "nave  corp";
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 150px 1fr;
+}
+
+.cabe {
+  grid-area: cabe;
+  background-color: #8cffa0;
+  margin: margin-width 1;
+  margin-bottom: 2px;
+  border-color: #000000;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+}
+
+.nave {
+  grid-area: nave;
+  height: 92vh;
+  background-color: #ffa08c;
+}
+
+.corp {
+  grid-area: corp;
+  background-color: #ffff64;
+  margin: margin-width 1;
+  margin-left: 2px;
+  border-color: #000000;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+}
+.g2main {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "g2tool"
+    "g2bar"
+    "g2linhas"
+    "g2roda";
+  grid-template-rows: 31px 50px 1fr 20px;
+  grid-column: 1fr;
+}
+.g2tool {
+  grid-area: g2tool;
+  width: 100%;
+  height: 100%;
+  background-color: #8cffa0;
+}
+.g2bar {
+  grid-area: g2bar;
+  background-color: #6981d1;
+}
+.g2linhas {
+  grid-area: g2linhas;
+  width: 100%;
+  height: 100%;
+  background-color: #ff9064;
+}
+.g2roda {
+  grid-area: g2roda;
+  background-color: #71ff64;
+}
+ul.tabs {
+  padding: 7px 0;
+  font-size: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: left;
+}
+
+ul.tabs li {
+  display: inline;
+  margin: 0;
+  margin-right: 3px;
+}
+
+ul.tabs li a {
+  font: normal 12px Verdana;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  padding: 7px 16px;
+  border: 1px solid #ccc;
+  border-bottom-color: #b7b7b7;
+  color: #000;
+  background: #f0f0f0;
+  border-radius: 6px 6px 0px 0px;
+  -moz-border-radius: 6px 6px 0px 0px;
+  outline: none;
+}
+
+ul.tabs li a:hover {
+  border: 1px solid #b7b7b7;
+  background: #e0e0e0;
+}
+
+ul.tabs li.selected a {
+  position: relative;
+  top: 0px;
+  font-weight: bold;
+  background: white;
+  border: 1px solid #b7b7b7;
+  border-bottom-color: white;
+}
+.tabcontents {
+  width: 400px;
+  border: 1px solid #b7b7b7;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 0 2px 2px 2px;
+}
+/*
+#page > main > footer {
+  grid-area: foot;
+  background-color: #8cffa0;
+  margin: margin-width 1;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-bottom: auto;
+  border-color: #000000;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.container {
+  padding: 0px;
+}
+
+.card {
+  width: 149px;
+  height: 100%;
+  background-color: #1e2b32;
+  border-radius: 10px 10px;
+}
+
+.header {
+  border-radius: 5px 5px 0px 0px;
+  padding: 0px;
+  background-color: #2a3942;
+}
+
+h3 {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  margin-left: 1rem;
+}
+
+.iconM {
+  font-size: 18px;
+  margin-left: 170px;
+  color: #2f89fc;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.body li {
+  transition: 1s all;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  padding: 2px;
+  margin-left: -40px;
+  margin-top: 0px;
+  color: #fff;
+  list-style: none;
+  display: block;
+  border-top-right-radius: 1px 1px;
+  border-bottom-right-radius: 1px 1px;
+}
+
+li:hover {
+  transition: 1s all;
+  color: #2f89fc;
+  background-color: rgba(42, 56, 65, 0.82);
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  cursor: pointer;
+}
+
+.body > li {
+  float: left;
+}
+
+.body li ul {
+  background: #1e2b32;
+  margin-left: 280px;
+  margin-top: 0px;
+  display: none;
+  position: absolute;
+  border-top-right-radius: 15px 15px;
+  border-bottom-right-radius: 15px 15px;
+}
+
+.body li:hover > ul {
+  display: block;
+  cursor: pointer;
+}
+*/
