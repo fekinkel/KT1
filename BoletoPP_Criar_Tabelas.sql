@@ -6,30 +6,27 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[PP_GUIA](
-	[Codigo_Pre] [int] NOT NULL,
-	[Codigo] [int] NOT NULL,
-	[Codigo_Pos] [int] NOT NULL,
+CREATE TABLE [dbo].[PP_CARNE](
+	[Codigo] [varchar] (10) NOT NULL,
+	[Parcela] [int] NOT NULL,
 	[Valor_UFM] [float] NOT NULL,
 	[Valor_Real] [float] NOT NULL,
+	[Observacao][ntext] NOT NULL,
+	[Login][varchar](20) NOT NULL,
 	[Data_Vencimento] [datetime] NOT NULL,
 	[Data_Pagamento] [datetime] NULL,
  CONSTRAINT [PK_PP_GUIA] PRIMARY KEY CLUSTERED 
 (
-	[Codigo_Pre] ASC,
 	[Codigo] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[PP_GUIA] ADD  CONSTRAINT [DF_PP_GUIA_Codigo_Pre]  DEFAULT ((15000)) FOR [Codigo_Pre]
-GO
-
-ALTER TABLE [dbo].[PP_GUIA] ADD  CONSTRAINT [DF_PP_GUIA_Codigo_Pos]  DEFAULT ((49)) FOR [Codigo_Pos]
+ALTER TABLE [dbo].[PP_CARNE] ADD  CONSTRAINT [DF_PP_CARNE_Parcela]  DEFAULT ((99)) FOR [Parcela]
 GO
 
 
-/****** Object:  Table [dbo].[PP_PRECO_PUBLICO]    Script Date: 21/06/2024 16:06:25 ******/
+/****** Object:  Table [dbo].[PP_PRECO_PUPLICO]    Script Date: 21/06/2024 16:06:25 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -62,9 +59,9 @@ CREATE TABLE [dbo].[PP_USUARIO](
 	[Matricula] [int] NULL,
 	[Secretaria] [varchar](30) NULL,
 	[Senha] [varchar](20) NULL,
-	[Alterar_Senha] [varchar](1) NULL,
-	[Administrador] [varchar](1) NOT NULL,
-	[Ativo] [varchar](1) NOT NULL,
+	[Alterar_Senha] [bit] NULL,
+	[Administrador] [bit] NOT NULL,
+	[Ativo] [bit] NOT NULL,
  CONSTRAINT [PK_PP_USUARIO] PRIMARY KEY CLUSTERED 
 (
 	[Login] ASC
@@ -75,13 +72,13 @@ GO
 ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Senha]  DEFAULT ((1234)) FOR [Senha]
 GO
 
-ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Alterar_Senha]  DEFAULT ('S') FOR [Alterar_Senha]
+ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Alterar_Senha]  DEFAULT (1) FOR [Alterar_Senha]
 GO
 
-ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Administrador]  DEFAULT ('N') FOR [Administrador]
+ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Administrador]  DEFAULT (0) FOR [Administrador]
 GO
 
-ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Ativo]  DEFAULT ('S') FOR [Ativo]
+ALTER TABLE [dbo].[PP_USUARIO] ADD  CONSTRAINT [DF_PP_USUARIO_Ativo]  DEFAULT (1) FOR [Ativo]
 GO
 
 
