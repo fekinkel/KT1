@@ -1,0 +1,22 @@
+﻿@page
+
+@model WebKinkel.Pages.CalculadoraModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{
+    //<fieldset> 
+        <legend style = "color:blue" > Operation Of Two Numbers </legend>
+        @Html.EditorFor(x => x.ModeloCalc.A) <br/><br/> 
+        @Html.EditorFor(x => x.ModeloCalc.B) <br/> <br/> 
+        <input type = "submit" value = "add" name = "command" />
+        <input type = "submit" value = "sub" name = "command" />
+        <input type = "submit" value = "mul" name = "command" />
+        <input type = "submit" value = "div" name = "command" />
+        <br />
+        <br />
+        <h2 style = "color:red"> @Html.Label("Result is :") @Html.DisplayFor(x => x.ModeloCalc.Resultado) </h2>
+     //</fieldset>
+
+}
