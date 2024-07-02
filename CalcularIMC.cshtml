@@ -1,0 +1,61 @@
+﻿@page
+@using static WebKinkel.Pages.CalcularIMCModelView
+@model WebKinkel.Pages.CalcularIMCModel
+@{
+}
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Calculadora de IMC Online</title>
+
+    <!-- Bootstrap -->
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom style -->
+    <link href="~/bootstrap/css/signin.css" rel="stylesheet">
+
+</head>
+
+@*<body>
+    <div class="container">
+        <form class="form-signin" method="post">
+            <h2 class="form-signin-heading">Calculadora de IMC</h2>
+            <label class="sr-only">Digite seu peso</label>
+            <input type="text" asp-for="@Model..Peso"  class="form-control" placeholder="Peso" name="peso" required autofocus>
+            <label class="sr-only">Digite sua altura</label>
+            <input type="text" asp-for="@Model.Altura" class="form-control" placeholder="Altura" name="altura" required>
+            <label class="sr-only">IMC</label>
+            <input type="text" asp-for="@Model.IMC" class="form-control" placeholder="Altura" name="altura" value="1" disabled>
+            <input type="submit" value="add" name="command" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Calcular</button>
+        </form>
+    </div> 
+</body>*@
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <fieldset>
+        <legend style="color:blue"> Operation Of Two Numbers </legend>
+        @Html.DropDownListFor(m => m.ModelView.SelectTipoBebida, new SelectList(Enum.GetValues(typeof(TipoBebida))), new { onchange = "submit();"})
+    @Html.EditorFor(x => x.ModelView.Altura)
+    <br />
+    <br />
+    @Html.EditorFor(x => x.ModelView.Peso)
+    <br />
+    <br />
+    <input type="submit" value="add" name="command" />
+    <input type="submit" value="sub" name="command" />
+    <input type="submit" value="mul" name="command" />
+    <input type="submit" value="div" name="command" />
+    <br />
+        @Html.DisplayFor(x => x.ModelView.TipoDeBebida)
+    <br />
+    <h2 style="color:red"> @Html.Label("Result is :") @Html.DisplayFor(x => x.ModelView.IMC) </h2>
+    </fieldset>
+
+}
+</html>
