@@ -1,0 +1,47 @@
+﻿@page
+@model WebKinkel.Pages.Carne.CreateModel
+
+@{
+    
+}
+
+<h1>Create</h1>
+
+<h4>PpCarne</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.ModelView.Codigo, Model.ModelView.ListaPrecoPublicos, "-- Selecione --", new { onchange = "submit();"} )
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ModelView.Codigo" class="control-label"></label>
+                <input asp-for="@Model.ModelView.Codigo" class="form-control" />
+                <span asp-validation-for="@Model.ModelView.Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ModelView.ValorUfm" class="control-label"></label>
+                <input asp-for="@Model.ModelView.ValorUfm" class="form-control" />
+                <span asp-validation-for="@Model.ModelView.ValorUfm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ModelView.ValorReal" class="control-label"></label>
+                <input asp-for="@Model.ModelView.ValorReal" class="form-control" />
+                <span asp-validation-for="@Model.ModelView.ValorReal" class="text-danger"></span>
+            </div>
+
+            <input type="submit" value="add" name="command" />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Voltar para Lista de Guias</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
