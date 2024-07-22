@@ -1,47 +1,158 @@
 ﻿@page
-@model WebKinkel.Pages.Carne.CreateModel
+@using static WebBoletoPP.Pages.Carne.CreateModelView
+
+@model WebBoletoPP.Pages.Carne.CreateModel
 
 @{
-    
+    ViewData["Title"] = "Criar Guia";
 }
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>Create</h1>
+    <title>Criar Guia</title>
 
-<h4>PpCarne</h4>
-<hr />
+    <!-- Bootstrap -->
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom style -->
+    <link href="~/bootstrap/css/signin.css" rel="stylesheet">
+
+</head>
 <div class="row">
     <div class="col-md-4">
+        @*<form id="formAction" method="get" asp-page-handler="Action"></form>*@
         <form method="post">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
             <div class="form-group">
-                @Html.DropDownListFor(model => model.ModelView.Codigo, Model.ModelView.ListaPrecoPublicos, "-- Selecione --", new { onchange = "submit();"} )
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.ModelView.Codigo" class="control-label"></label>
-                <input asp-for="@Model.ModelView.Codigo" class="form-control" />
-                <span asp-validation-for="@Model.ModelView.Codigo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.ModelView.ValorUfm" class="control-label"></label>
-                <input asp-for="@Model.ModelView.ValorUfm" class="form-control" />
-                <span asp-validation-for="@Model.ModelView.ValorUfm" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.ModelView.ValorReal" class="control-label"></label>
-                <input asp-for="@Model.ModelView.ValorReal" class="form-control" />
-                <span asp-validation-for="@Model.ModelView.ValorReal" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                <label asp-for="ModelView.Codigo" class="control-label"></label>
+                                <input asp-for="ModelView.Codigo" class="form-control" disabled />
+                                <span asp-validation-for="ModelView.Codigo" class="text-danger"></span>
+                            </td>
+                            <td>
 
-            <input type="submit" value="add" name="command" />
+                            </td>
+                            <td>
+                                <label asp-for="ModelView.Parcela" class="control-label"></label>
+                                <input asp-for="ModelView.Parcela" class="form-control" disabled />
+                                <span asp-validation-for="ModelView.Parcela" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="@Model.ModelView.PpId" class="control-label"></label>*@
+                    @* @Html.DropDownListFor(model => model.ModelView.ePPid, @CreateModelView.ListaPrecoPublicos, "-- Selecione --", new {@class = "form-control", onchange="this.form.submit()", name="Action" ,value="DropDown" }  ) *@
+                    <select asp-for="ModelView.PpId" asp-items="@CreateModelView.ListaPrecoPublicos" asp-page-handler="teste" onchange="submit()" >
+                        <option value="">Choose a tag</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                <label asp-for="ModelView.ValorUfm" class="control-label"></label>
+                                <input asp-for="ModelView.ValorUfm" class="form-control" disabled />
+                                <span asp-validation-for="ModelView.ValorUfm" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <label asp-for="ModelView.ValorUFIR" class="control-label"></label>
+                                <input asp-for="ModelView.ValorUFIR" class="form-control" disabled />
+                                <span asp-validation-for="ModelView.ValorUFIR" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group">
+                        <label asp-for="ModelView.Quantidade" class="control-label">Quantidade</label>
+                        <input asp-for="ModelView.Quantidade" asp-page-handler="Valores" type="submit" class="form-control"  />
+                        <span asp-validation-for="ModelView.Quantidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ModelView.ValorReal" class="control-label">Valor em Moeda corrente(R$)</label>
+                    <input asp-for="ModelView.ValorReal" class="form-control" disabled />
+                    <span asp-validation-for="ModelView.ValorReal" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ModelView.DataVencimento" class="control-label"></label>
+                    <input asp-for="ModelView.DataVencimento" class="form-control" />
+                    <span asp-validation-for="ModelView.DataVencimento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ModelView.Observacao" class="control-label"></label>
+                    <input asp-for="ModelView.Observacao" class="form-control"  />
+                    <span asp-validation-for="ModelView.Observacao" class="text-danger"></span>
+                </div>
+                <input type="submit" asp-page-handler="Salvar" name="Action" value="Salvar" class="btn btn-primary" />
+                <input type="submit" asp-page-handler="GerarPdf" name="Action" value="Gerar PDF" class="btn btn-primary" />
+                <input type="submit" asp-page-handler="GerarPdfRdlc" name="Action" value="Gerar PDF Rdlc" class="btn btn-primary" />
+                <input type="submit" asp-page-handler="GerarPdfSql" name="Action" value="Gerar PDF SQL" class="btn btn-primary" />
+
+                
+            </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Voltar para Lista de Guias</a>
+    <a asp-page="Index">Back to List</a>
 </div>
+</html>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script type="text/javascript">
+        $(document).ready(function () {            
+            $(IndexListaPP).change(function () {
+                var value = $("#IndexListaPP option:selected").val();
+
+                if (value !== "" || value !== undefined) {
+                    //ListarPrecoPublicos(value);
+                }
+            });
+        })
+
+        function ListarPrecoPublicos(value) {
+            //var url = "Create/ListarPP";
+            var url = "Create";
+
+            var valDataVencimento = document.getElementById("ModelView_DataVencimento").value;
+
+            var dados = { id: value, vencimento: valDataVencimento };
+            var data = { jsonstring: JSON.stringify(dados) };
+            //var data = { jsonstring: valjsonstring };
+            //var data = { indicelistapp: value };
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                datatype: "json",
+                data: data
+            }).done(function (data) {
+                if (data.valorufm != "") {
+                    document.getElementById("ModelView_ValorUfm").value = data.valorufm;
+                    document.getElementById("ModelView_ValorUFIR").value = data.valorufir;
+                    CalcularValor();
+                }
+            })
+        }
+        function CalcularValor() {
+            document.getElementById("ModelView_ValorReal").value = data.valorufm * data.valorufir;
+
+        }
+    </script>
 }
+
