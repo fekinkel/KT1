@@ -1,3 +1,10 @@
 dotnet ef dbcontext scaffold "Server=187.103.145.68;Database=BoletoPP_HOMOLOG;user id=tecnosysnet;password=tecno1999;trustservercertificate=true" Microsoft.EntityFrameworkCore.SqlServer -o Models -c "BoletoPPContext" -f
 
 Scaffold-DbContext 'Server=187.103.145.68;Database=BoletoPP_HOMOLOG;user id=tecnosysnet;password=tecno1999;trustservercertificate=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+Não esquecer os pacotes no Projeto :
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+
