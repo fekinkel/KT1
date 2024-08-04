@@ -9,3 +9,4 @@ Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Tools
 NToastNotify
 
+Scaffold-DbContext 'Server=Desenv04\sqlexpress;Database=MegaJogos;user id=sa;password=casa230;trustservercertificate=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
