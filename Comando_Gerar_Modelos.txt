@@ -10,3 +10,119 @@ Microsoft.EntityFrameworkCore.Tools
 NToastNotify
 
 Scaffold-DbContext 'Server=Desenv04\sqlexpress;Database=MegaJogos;user id=sa;password=casa230;trustservercertificate=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+body {  
+  margin: 0px;  
+  padding: 0px;  
+  width: 642px;  
+  color: #959595;  
+  font: normal 12px/1.8em Arial, Helvetica, sans-serif;  
+  background: silver;  
+}  
+.MainBody {  
+  width: 770px;  
+  margin: 0 auto;  
+  padding: 0px;  
+}  
+.header {  
+  background-color: Green;  
+  height: 40px;  
+  text-align: center;  
+  font-size: 10px;  
+  color: White;  
+  margin: 0px;  
+  padding: 0px;  
+  width: auto;  
+}  
+.header h3 {  
+  font-size: 20px;  
+  line-height: 40px;  
+}  
+.left {  
+  width: 150px;  
+  height: 500px;  
+  margin: 0px;  
+  padding: 0px;  
+  background-color: Fuchsia;  
+  float: left;  
+  text-align: center;  
+}  
+.left h4 {  
+  font-size: 20px;  
+  color: Navy;  
+  margin-top: 200px;  
+}  
+.left h5 {  
+  font-size: 20px;  
+  color: Navy;  
+}  
+.center {  
+  width: 420px;  
+  background-color: Red;  
+  margin-top: -16.1px;  
+  margin-left: 150px;  
+  padding: 0px;  
+  height: 500px;  
+}  
+.center h1 {  
+  color: Navy;  
+  text-align: center;  
+  padding: 250 0 0 0;  
+  vertical-align: bottom;  
+  line-height: 500px;  
+}  
+.right {  
+  width: 200px;  
+  height: 500px;  
+  background-color: Lime;  
+  float: right;  
+  margin-top: -500px;  
+  margin-left: 0px;  
+  padding: 0px;  
+  color: Navy;  
+  text-align: center;  
+  line-height: 475px;  
+}  
+.footer {  
+  background: yellow;  
+  background-color: Green;  
+  height: 50px;  
+  text-align: center;  
+  padding-left: 0px;  
+  font-size: 20px;  
+  color: White;  
+  margin: -30px 0px 0px 0px;  
+  width: auto;  
+}  
+.footer h3 {  
+  font-size: 30px;  
+  line-height: 40px;  
+}  </style>
+</head>
+<body>
+<div class="MainBody">  
+            <div class="header" >  
+                <h3>This is header </h3>  
+            </div>  
+            <div class="left">  
+                <h4>Left</h4>  
+                <h5>Content</h5>  
+            </div>  
+            <div class="center">  
+                <h1>Center Content</h1>  
+            </div>  
+            <div class="right">  
+                <h2>Right Content</h2>  
+            </div>  
+            <div class="footer">  
+                <h3>Footer</h3>  
+            </div>  
+        </div>  
+</body>
+</html>
