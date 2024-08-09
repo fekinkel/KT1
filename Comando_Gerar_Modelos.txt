@@ -11,6 +11,13 @@ NToastNotify
 
 Scaffold-DbContext 'Server=Desenv04\sqlexpress;Database=MegaJogos;user id=sa;password=casa230;trustservercertificate=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
 
+Adicionar icone e Hint
+<i class="bi bi-printer-fill" data-toggle="tooltip"                               
+   title="Imprimir"></i>
+
+SQL
+Where ((@b=0 and login = @s) or (@b = 1 and login <> ''))
+
 <!DOCTYPE html>
 <html>
 <head>
