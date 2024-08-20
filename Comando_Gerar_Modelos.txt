@@ -15,6 +15,36 @@ Adicionar icone e Hint
 <i class="bi bi-printer-fill" data-toggle="tooltip"                               
    title="Imprimir"></i>
 
+Script para abrir em outra Aba
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function logAndRedirect(id_new) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Page("/Guia/Guiapp")',
+                data: { valIdGuia: id_new },
+
+                success: function (response) {
+                    //var blob = new Blob([response]);
+                    //var link = document.createElement('a');
+                    //response.contentType("application/pdf")
+                    //let pdfWindow = window.open("")
+                    //pdfWindow.document.write(
+                    //    "<iframe width='100%' height='100%' src='data:application/pdf;base64, " +
+                    //    encodeURI(response) + "'></iframe>")
+                    if (response) {
+                        window.open(response, '_blank');
+                    } else {
+                        alert('Failed to retrieve the URL.');
+                    }
+                },
+                error: function () {
+                    alert('Error logging link access.');
+                }
+            });
+        }
+    </script>
 SQL
 Where ((@b=0 and login = @s) or (@b = 1 and login <> ''))
 
